@@ -1,0 +1,27 @@
+{
+  "name": "video_course",
+  "version": "1.0.0",
+  "description": "Video Course",
+  "main": "index.js",
+  "repository": "bitbucket.org:PhantomDC32/videosharing-course.git",
+  "author": "PhantomDC <artem.jiv@mail.ru>, a.bartsev <a.bartsev@mail.ru>",
+  "scripts": {
+    "server": "yarn nodemon index.js",
+    "client": "cd client && yarn start",
+    "start": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
