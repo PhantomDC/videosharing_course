@@ -24,7 +24,7 @@ const init = async () => {
         console.error(e);
         throw e;
     }
-
 }
+
 
 init();
