@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {Auth} from './components/user/auth';
-import {Context} from './context';
+import {AppContextProvider} from './context';
 
 function App() {
   const [isLogin, setLogin] = useState(false)
   return (
-    <Context.Provider value={{isLogin, setLogin}} >
+    <AppContextProvider value={{isLogin, setLogin}} >
       {isLogin ? (<div>Chat</div>) : (<Auth />)}
       
-    </Context.Provider>
+    </AppContextProvider>
   );
 }
 

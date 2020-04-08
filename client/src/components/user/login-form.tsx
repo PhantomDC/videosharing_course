@@ -1,14 +1,24 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import {Link} from '@material-ui/core';
-import Checkbox from '@material-ui/core/Checkbox';
+import React, {useContext, useState} from 'react';
+import {Link, FormControlLabel, Button, Grid, TextField, Checkbox} from '@material-ui/core';
+import { Context } from "../../context";
 interface ILoginFormProps {
     onClick: () => void
 }
 const LoginForm = (props: ILoginFormProps): JSX.Element => {
+  const [valueFields, setValueFields] = useState({login: '', password: ''})
+  const context = useContext(Context);
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    return fetch('/login', {
+      method: "POST",
+      body: JSON.stringify(valueFields)
+    }).then((res) => {
+      context?.setLogin(true)
+    })
+  }
+  const handleChange = (e: {target: any}) => {
+    setValueFields({...valueFields, [e.target.name]: e.target.value})
+  }
     return <>
      <form className={'form'} noValidate>
             <TextField
@@ -16,11 +26,12 @@ const LoginForm = (props: ILoginFormProps): JSX.Element => {
               margin="normal"
               required
               fullWidth
-              id="email"
+              id="login"
               label="Email Address"
-              name="email"
-              autoComplete="email"
+              name="login"
+              autoComplete="login"
               autoFocus
+              onChange={handleChange}
             />
             <TextField
               variant="outlined"
@@ -32,6 +43,7 @@ const LoginForm = (props: ILoginFormProps): JSX.Element => {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={handleChange}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -43,6 +55,7 @@ const LoginForm = (props: ILoginFormProps): JSX.Element => {
               variant="contained"
               color="primary"
               className={'button'}
+              onClick={handleClick}
             >
               Sign In
             </Button>

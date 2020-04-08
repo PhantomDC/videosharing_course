@@ -1,6 +1,11 @@
-import React, {createContext} from 'react';
-type ContextProps = { 
+import React, {Dispatch} from 'react';
+
+  export interface AppContextInterface {
     isLogin: boolean,
-    setLogin?: () => boolean
-  };
-export const Context = createContext<Partial<ContextProps>>({});
+    setLogin: Dispatch<boolean> 
+  }
+  export const Context = React.createContext<AppContextInterface | null>(null);
+
+  export const AppContextProvider = Context.Provider;
+  
+  export const AppContextConsumer = Context.Consumer;

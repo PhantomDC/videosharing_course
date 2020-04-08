@@ -1,12 +1,9 @@
-import React, {useState} from 'react';
-import Grid from '@material-ui/core/Grid';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Avatar from '@material-ui/core/Avatar';
-import Paper from '@material-ui/core/Paper';
+import React, {useState, useContext} from 'react';
+import {Grid,CssBaseline, Avatar, Paper, Typography} from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
 import { LoginForm } from './login-form';
 import { RegistrForm } from './register-form';
+
 
 const Auth = (): JSX.Element => {
     const [userPick, setUserPick] = useState(true);
