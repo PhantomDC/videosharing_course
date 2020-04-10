@@ -19,7 +19,7 @@ const RegistrForm = (props: IRegisterForm): JSX.Element => {
   const handleChange = (e: {target: any}) => {
     setValueFields({...valueFields, [e.target.name]: e.target.value})
   };
-    return <><form className={'form'} noValidate>
+    return <form className={'form'} noValidate>
     <TextField
       variant="outlined"
       margin="normal"
@@ -77,7 +77,7 @@ const RegistrForm = (props: IRegisterForm): JSX.Element => {
         </Link>
       </Grid>
     </Grid>
-  </form></>
+  </form>
 }
 
 export {RegistrForm}
