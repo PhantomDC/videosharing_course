@@ -7,9 +7,7 @@ import { RegistrForm } from './register-form';
 
 const Auth = (): JSX.Element => {
     const [userPick, setUserPick] = useState(true);
-    const handleClick = () => {
-        setUserPick((prevProps: boolean) => !prevProps);
-    }
+
     return <>
      <Grid container component="main" style={{height: '100vh'}}>
       <CssBaseline />
@@ -22,9 +20,9 @@ const Auth = (): JSX.Element => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          {userPick ? <LoginForm onClick={handleClick}/>
+          {userPick ? <LoginForm />
           :
-          <RegistrForm onClick={handleClick}/>
+          <RegistrForm />
           }
           </div>
       </Grid>
