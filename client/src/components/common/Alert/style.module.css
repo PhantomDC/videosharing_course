@@ -1,0 +1,19 @@
+.itemBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 1rem;
+    font-size: 20px;
+    width: 50%;
+    margin: .5rem auto;
+
+}
+.item_green {
+    background-color: rgb(4, 145, 102);
+
+}
+.item_red {
+    background-color: rgb(179, 66, 1);
+
+}

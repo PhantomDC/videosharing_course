@@ -5,7 +5,6 @@ import AuthContext from '../../store/AuthContext';
 const useStyles = makeStyles((theme: Theme) => createStyles({
   header: {
     width: '100%',
-    marginBottom: 20,
     backgroundColor: theme.palette.primary.dark,
     color: theme.palette.primary.contrastText,
   },

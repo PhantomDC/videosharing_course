@@ -1,14 +1,15 @@
 import React, { useContext, useState } from 'react';
 import {
-  Link,
   FormControlLabel,
   Button,
   Grid,
   TextField,
   Checkbox
 } from '@material-ui/core';
+import {Link} from 'react-router-dom';
 import AppContext from "../../store/AuthContext";
 import { useHttp } from '../../hooks/useHttp';
+import s from './style.module.css';
 
 type ResponseType = {
   token: string | null
@@ -51,7 +52,7 @@ const LoginForm = (): JSX.Element => {
   const { loginVal, passwordVal } = valueFields;
 
   return (
-    <form className={ 'form' } noValidate>
+    <form className={s.form} noValidate>
       <TextField
         variant="outlined"
         margin="normal"
@@ -91,12 +92,12 @@ const LoginForm = (): JSX.Element => {
             </Button>
       <Grid container>
         <Grid item xs>
-          <Link href="#" variant="body2">
+          <Link to={'/'}>
             Forgot password?
                 </Link>
         </Grid>
         <Grid item>
-          <Link href="#" variant="body2">
+          <Link to={'/register'}>
             { "Don't have an account? Sign Up" }
           </Link>
         </Grid>
